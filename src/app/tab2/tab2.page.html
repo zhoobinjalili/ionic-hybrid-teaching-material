@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title>Device info</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,5 +11,43 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <br />
+
+  <ion-button (click)="refresh()" expand="block">
+    <ion-icon slot="icon-only" name="refresh"></ion-icon>
+    &nbsp;Refresh
+  </ion-button>
+
+  <ion-item>
+    <ion-label>ID</ion-label>
+    <ion-textarea
+      [value]="deviceId | json"
+      readonly="true"
+      autoGrow="true"
+    ></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Info</ion-label>
+    <ion-textarea
+      [value]="deviceInfo | json"
+      readonly="true"
+      autoGrow="true"
+    ></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Battery info</ion-label>
+    <ion-textarea
+      [value]="batteryInfo | json"
+      readonly="true"
+      autoGrow="true"
+    ></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Language tag</ion-label>
+    <ion-textarea
+      [value]="languageTag | json"
+      readonly="true"
+      autoGrow="true"
+    ></ion-textarea>
+  </ion-item>
 </ion-content>
